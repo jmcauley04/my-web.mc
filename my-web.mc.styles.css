@@ -5,7 +5,7 @@
     border-radius: 50%;
     scale: .9;
     transform-origin: center;
-    background: url('/images/profile_img.png');
+    background: url('images/profile_img.png');
     background-size: cover;
     background-position-x: 50%;
     background-position-y: 20%;
@@ -28,7 +28,7 @@ div:has(>.profile-img):hover .profile-img[b-390ft7y6oa] {
 
 .wrapper-bg-image[b-l8ssf5f51j] {
     position: absolute;
-    background-image: url('/images/bg_geometry.png');
+    background-image: url('images/bg_geometry.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
