@@ -1,0 +1,10 @@
+﻿
+<div>
+    <strong>@Skill?.Name</strong>
+    <p class='text-xs text-[var(--text-dark)]'>@Skill?.Points</p>
+</div>
+
+@code {
+    [Parameter]
+    public Skill? Skill { get; set; }
+}

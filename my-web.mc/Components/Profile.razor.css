@@ -1,0 +1,19 @@
+﻿.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    scale: .9;
+    transform-origin: center;
+    background: url('/images/profile_img.png');
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 20%;
+    box-shadow: 1px 1px 15px 10px hsl(220, 40%, 30%);
+    box-sizing: content-box;
+    background-repeat: no-repeat;
+    transition: scale 0.5s;
+}
+
+div:has(>.profile-img):hover .profile-img {
+    scale: 1;
+}

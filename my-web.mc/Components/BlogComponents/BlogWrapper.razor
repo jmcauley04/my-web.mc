@@ -1,0 +1,12 @@
+﻿
+<div class="grid md:max-h-[90vh]" style="overflow-y: auto;">
+    <div class='max-w-[800px] m-auto' >
+        @ChildContent
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

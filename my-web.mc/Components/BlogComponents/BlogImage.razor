@@ -1,0 +1,18 @@
+﻿
+<div class='rounded-lg overflow-hidden grid place-content-center'>
+    <img src="@Source" alt="@Alt" width="@w" height="@h" />
+</div>
+
+@code {
+    double h => 600 * Scale;
+    double w => 800 * Scale;
+
+    [Parameter, EditorRequired]
+    public string Source { get; set; } = null!;
+
+    [Parameter]
+    public string? Alt { get; set; }
+
+    [Parameter]
+    public double Scale { get; set; } = 1;
+}

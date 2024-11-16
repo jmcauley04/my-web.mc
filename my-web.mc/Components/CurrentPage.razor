@@ -1,0 +1,26 @@
+﻿@inject NavigationManager NavigationManager
+
+<div style="letter-spacing: .2em;">@CurrentPagePath</div>
+
+@code {
+    string? CurrentPagePath { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        NavigationManager.LocationChanged += HandleLocationChanged;
+        UpdateCurrentPage();
+        return Task.CompletedTask;        
+    }
+
+    private void HandleLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        UpdateCurrentPage();
+        StateHasChanged();
+    }
+
+    private void UpdateCurrentPage()
+    {
+        var currentPage = NavigationManager.Uri.Split("/").LastOrDefault();
+        CurrentPagePath = string.IsNullOrEmpty(currentPage) ? "Home" : currentPage.Replace("-", " ");
+    }
+}

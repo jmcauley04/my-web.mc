@@ -1,0 +1,37 @@
+﻿<nav class="hidden sm:grid gap-5 justify-center content-start bg-[var(--bg-box-dark)] min-h-screen">
+    <div class="nav-activator">
+    <div class="p-6 w-full bg-white bg-opacity-5 hover:bg-opacity-10 transition-colors">
+        <Hamburger />
+    </div>
+    <ul class="gap-10 text-lg">
+        @foreach (var link in Links)
+        {
+            <li class="opacity-100">
+                <NavLink href="@link.Href">@link.Label</NavLink>
+            </li>
+        }      
+    </ul>
+    </div>
+    <div class="translate-x-10 rotate-90 text-center uppercase text-xl origin-left w-[1em] whitespace-nowrap tracking-widest font-medium">
+        <CurrentPage />
+    </div>
+</nav>
+
+@code {
+    record Link(string Href, string Label);
+    Link[] Links = [
+        new("/", "Home"),
+        new("/projects", "Projects"),
+        new("/blogs", "Blogs"),
+        new("/my-hometown", "My Hometown"),
+    ];
+
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

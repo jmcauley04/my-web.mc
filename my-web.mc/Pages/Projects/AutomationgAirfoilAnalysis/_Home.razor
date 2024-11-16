@@ -1,0 +1,226 @@
+﻿@page "/projects/automating-airfoil-analysis"
+
+<PageTitle>Projects - Automating Airfoil Analysis</PageTitle>
+
+<BlogWrapper>
+    <BlogHeader Title='Automating Airfoil Analysis'
+                Subtitle="Intention vs Definition"
+                Date='February 2020'
+                Tag='Professional' />
+    <BlogParagraph>
+        In this article, I share a story of how an ordinary task turned unexpectedly challenging due to unforeseen complications.
+        This narrative illustrates not only the resolution of these challenges but also how they were transformed into an opportunity
+        that exceeded the original expectations.  This experience demonstrates the importance of understanding the intent behind a
+        task and the value of pursuing the intended solution over the defined one.
+    </BlogParagraph>
+    <BlogSubheader>
+        The Project as Defined
+    </BlogSubheader>
+    <BlogParagraph>
+        The project's goal was to develop an application that enables users, even those without ATOS Professional experience, to automatically convert cleaned CMM (coordinate measuring machine) data into a comprehensive airfoil profile report within ATOS Professional, utilizing the Chebyshev best-fit algorithm. "Cleaned data" refers to data where the points are sequential, the shape is closed (starting and ending at the same point), and there are no overlapping paths.
+    </BlogParagraph>
+    <BlogParagraph>
+        This task was far from trivial. Even a software engineer from the company that sells ATOS Professional was unaware that raw CMM data could be imported and converted into actual sections for blade analysis. This isn't a reflection on the engineer or the company, as this capability is beyond the software’s intended scope. Although this task presents significant challenges, the approach to completing it is straightforward, requiring only the necessary time and effort to navigate through it.
+    </BlogParagraph>
+    <BlogParagraph>
+        ATOS Professional software includes a Python IDE, which, though somewhat rudimentary, enables the recording and parameterization of various procedures. A significant portion of the project involved designing a user-friendly interface that allows users to identify key elements necessary for automation and to guide the script in parsing the input data. Additionally, special considerations were made to handle edge cases, such as parsing zip files and navigating through subfolders.
+    </BlogParagraph>
+    <BlogParagraph>
+        Within just a couple of days, the automation was up and running. The first full execution successfully converted 231 individual files into a single Excel report, outputting the data along with 11 PDFs, each titled with the part serial number, and including 21 accurately identified cross-sections. This entire process took only 10 minutes, compared to the two weeks the layout department had estimated for completing this part of the task manually. Moving forward, any similar future tasks can be completed in approximately three seconds per file.
+    </BlogParagraph>
+    <BlogParagraph>
+        As outlined earlier, an unexpected complication arose—some data was not being processed by the ATOS Professional software. Upon investigation, it was discovered that some files were not importing as valid sections. Further analysis revealed that the raw data files were not as clean as initially stated. Additionally, the only available method to eliminate overlapping paths involved manually inspecting and deleting the points causing the overlaps—a time-consuming task prone to errors.
+    </BlogParagraph>
+    <BlogParagraph>
+        This issue threatened the reliability of the project and risked rendering the effort futile. After all, who would prefer using an application that only intermittently produces data, when the manual method—albeit slow—ensures consistent results through the diligence of a layout technician who meticulously refines the input data for guaranteed outcomes?
+    </BlogParagraph>
+    <BlogParagraph>
+        At this point, the initially defined task was completed and so I had no obligation to go further, yet the time spent on the solution would have been completely wasted had I not chosen to pursue the intended solution over the defined one.
+    </BlogParagraph>
+    <BlogSubheader>
+        The Extended Solution
+    </BlogSubheader>
+    <BlogParagraph>
+        The individual points defined by the raw data can be conceptualized as pairs of sequential points, or line segments. Overlapping paths are essentially intersections within these line segments. Leveraging this interpretation, a new method was developed to process the original data file and return a cleaned data file before importing it into ATOS Professional. The following pseudo-code outlines this approach:
+    </BlogParagraph>
+    <CodeWrapper Lines="@([
+        "def CleanFile(dirty):",
+        "",
+        "  # 1  Read the dirty file",
+        "  # 2  Save the file's header information for use in the clean file",
+        "  # 3  Create a Point (new class) that holds the line data for each line",
+        "  # 4  If the new point creates a line segment that intersects ",
+        "  #     any previous line segment, skip this point",
+        "  #    Else store the point in a list of points",
+        "  # 5  Close the file",
+        "",
+        "  # 6  Create a new file",
+        "  # 7  Write the header",
+        "  # 8  Write the lines of each point in the order they were received",
+        "  # 9  Close the file",
+        "",
+        "  # 10 Return the new file",
+      ])" />
+    <BlogParagraph>
+        Before delving into the specifics of how each line segment is checked for intersections, it’s important to note that the initial method was unsuccessful. As illustrated in the image below, line 4 causes all subsequent points after "Bad-3" to be rejected, as no future points are intersection-free.
+    </BlogParagraph>
+    <BlogImage Source="/projects/automating-airfoil-analysis/tables-and-points.jpg"
+               Alt="Figure 1" />
+    <CodeWrapper Lines="@([
+        "## Updated step 4: ##",
+        "",
+        "# 4  If the new point creates a line segment that intersects ",
+        "#     any previous line segment, remove the last accepted point and try again.",
+      ])" />
+    <BlogParagraph>
+        The hypothesis was that if an intersection occurred, it was due to an earlier erroneous turn, and the only way to correct it was by removing these bad turns. By implementing this modification, "Bad-3" would be deleted, resulting in the dirty file on the right being converted into the clean file on the left. The final question then is: how do we determine if there is an intersection?
+    </BlogParagraph>
+    <BlogParagraph>
+        After conducting brief research to refresh my understanding of the algebraic rules applicable to vectors and matrices, I began working on the final piece of this puzzle.
+    </BlogParagraph>
+    <BlogImage Source="/projects/automating-airfoil-analysis/intersections.jpg"
+               Alt="Figure 2"
+               Scale=".5" />
+    <BlogParagraph>
+        Consider the line segments created by arbitrary point pairs (Pi, Pi_1) and (Pn_1, P_n), the top image. These pairs
+        represent any previously accepted line segment and a new segment, respectively. Note that (Pi_1 - Pi) and (Pn - Pn_1)
+        are vectors going from Pi to Pi_1 and Pn_1 to Pn, respectively. The line segments can be represented as Pi + (Pi_1 - Pi) and Pn_1 + (Pn - Pn_1). If these two segments intersect, then there must exist scalars, u and v, from 0 to 1 such that:
+    </BlogParagraph>
+    <BlogMath Value="Pi + u(Pi_1 - Pi) = Pn_1 + v(Pn - Pn_1)" />
+    <BlogParagraph>
+        Aside from u and v, each of these terms is a vector and as such we must respect that vectors are not commutative like scalars however vectors do have some properties that prove very useful for solving this problem. For arbitrary vectors A, B and C,
+    </BlogParagraph>
+    <BlogParagraph>
+        Notation:
+    </BlogParagraph>
+    <div class='grid gap-5 pl-5 grid-cols-4'>
+        @foreach (var m in notation)
+        {
+            <BlogMath Value="@m" />
+        }
+    </div>
+    <BlogParagraph>
+        For simplicity, let
+    </BlogParagraph>
+    <div class='grid gap-5 pl-5 grid-cols-4'>
+        @foreach (var m in simplicity)
+        {
+            <BlogMath Value="@m" />
+        }
+    </div>
+    <BlogParagraph>
+        Then solving for <em>u</em>,
+    </BlogParagraph>
+    <div class='grid gap-5 pl-5 justify-items-start w-[100%] grid-cols-2'>
+        @foreach (var m in solving_u.Take(2))
+        {
+            <BlogMath Value="@m" />
+        }
+        @foreach (var m in solving_u.Skip(2))
+        {
+            <div></div>
+            <BlogMath Value="@m" />
+        }
+    </div>
+    <BlogParagraph>
+        Then solving for <em>v</em>,
+    </BlogParagraph>
+    <div class='grid gap-5 pl-5 justify-items-start w-[100%] grid-cols-2'>
+        @foreach (var m in solving_v.Take(2))
+        {
+            <BlogMath Value="@m" />
+        }
+        @foreach (var m in solving_v.Skip(2))
+        {
+            <div></div>
+            <BlogMath Value="@m" />
+        }
+    </div>
+    <BlogParagraph>
+        The denominator, BD, represents the angle between the two line segments. If the denominator is 0 then the lines are either
+        parallel or co-linear. Parallel lines are ones in which the numerator of either u or v is not 0 and are acceptable. Co-linear
+        lines are ones in which the numerator of u or v is not 0 and are rejected if and only if the co-linearity is found in an adjacent
+        segment. The result of this is that either a long, straight line comprised of multiple segments is converted to a single segment or
+        backtracking has occurred and the stray single segment is removed. A co-linear line is one in which the angle from a point in one
+        segment to a point in the other segment is equal to the angle between the points in either segment. This is the case when the
+        numerator of either u or v is equal to 0.
+    </BlogParagraph>
+    <BlogParagraph>
+        In the case that the denominator is not 0 then the segments are on lines with different angles and either intersect on the segment
+        or off of the segment. Due to how the original points were defined, if u or v is 0 then the segments intersect at the start of
+        the respective segment. Similarly, if u or v is 1 then the segments intersect at the end of the respective segment. This is only
+        accepted if one is 0 and the other is 1 which represents connected segments. If either u or v is outside of [0, 1] then the lines
+        don't intersect in the segment. If both u and v are inside of (0, 1) then the segments intersect and this is rejected.
+    </BlogParagraph>
+    <CodeWrapper Lines="@([
+        "Summary:",
+        "d = denominator",
+        "n = either numerator",
+        "u = u as defined above",
+        "v = v as defined above",
+        "S[i] = ith segment",
+        "P[:-1] = last accepted point ",
+        "i-1 = number of current accepted segments",
+        "i = the number of the segment being considered",
+        "",
+        "",
+        "if d == 0:",
+        "  if n == 0 for S(i) and S(i-1):",
+        "    reject P[:-1]",
+        "    run again",
+        "",
+        "if d != 0:",
+        "  if 0 < u < 1 and 0 < v < 1:",
+        "    reject P[:-1]",
+        "    run again",
+      ])" />
+
+    <BlogSubheader>
+        Conclusions
+    </BlogSubheader>
+    <BlogParagraph>
+        Implementing this was surprisingly easy. From the discovery that clean data was not guaranteed to a complete and effective
+        product was approximately three hours. Once completed, the application was applied on the data referenced when writing the
+        program and a second never-before-seen data set and a complete report was output in both cases. Additionally, in the case
+        of the original data set, the output after implementing the data cleaning algorithm was unchanged compared to the output
+        before implementing the algorithm in all cases except where the data was missing from the original output due to bad input
+        files that the algorithm sought to remedy.
+    </BlogParagraph>
+    <BlogParagraph>
+        The result of all of this is of two-fold benefit - not only will the program be able to complete its original task as was
+        requested reliably, the implementation of the algorithm to clean the data will greatly reduce the amount of time spent by
+        layout technicians preparing the data for the application; in the future, the algorithm could even be extracted for usage
+        separate of this project. The most difficult part is now automated.
+    </BlogParagraph>
+</BlogWrapper>
+
+
+@code {
+    string[] notation = [
+        "A \\times B = AB",
+        "AB = -BA",
+        "AA = 0",
+        "A(B + C) = AB + AC",
+  ];
+    string[] simplicity = [
+        "A = P_i",
+        "B = P_{i_1} - P_i",
+        "C = P_{n_1}",
+        "D = P_n - P_{n_1}",
+  ];
+    string[] solving_u = [
+        "P_i + u(P_{i_1} - P_i) = P_{n_1} + v(P_n - P_{n_1})",
+        "\\implies A + uB = C + vD",
+        "\\implies AD + uBD = CD + vDD",
+        "\\implies uBD = CD - AD",
+        "\\implies u = \\frac{CD - AD}{BD}",
+  ];
+    string[] solving_v = [
+        "P_i + u(P_{i_1} - P_i) = P_{n_1} + v(P_n - P_{n_1})",
+        "\\implies A + uB = C + vD",
+        "\\implies AB + uBB = CB + vDB",
+        "\\implies vDB = AB - CB",
+        "\\implies v = \\frac{AB - CD}{DB}",
+        "\\implies v = \\frac{CB - AB}{BD}",
+  ];
+}
