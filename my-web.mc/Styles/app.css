@@ -164,7 +164,7 @@ body {
     }
 
 .problem-to-solution {
-    background: url('/images/problem_solution.png');
+    background: url('images/problem_solution.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

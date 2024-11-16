@@ -7,7 +7,7 @@
 
 .wrapper-bg-image {
     position: absolute;
-    background-image: url('/images/bg_geometry.png');
+    background-image: url('images/bg_geometry.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

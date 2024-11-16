@@ -644,16 +644,12 @@ video {
   margin-top: 1rem;
 }
 
-.mt-9 {
-  margin-top: 2.25rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mt-9 {
+  margin-top: 2.25rem;
 }
 
 .flex {
@@ -676,12 +672,12 @@ video {
   height: 5rem;
 }
 
-.h-\[40px\] {
-  height: 40px;
-}
-
 .h-\[100\%\] {
   height: 100%;
+}
+
+.h-\[40px\] {
+  height: 40px;
 }
 
 .min-h-screen {
@@ -719,10 +715,6 @@ video {
 
 .flex-grow {
   flex-grow: 1;
-}
-
-.basis-\[400px\] {
-  flex-basis: 400px;
 }
 
 .basis-\[430px\] {
@@ -1034,24 +1026,16 @@ video {
   color: var(--accent-bold);
 }
 
+.text-\[var\(--alt-accent\)\] {
+  color: var(--alt-accent);
+}
+
 .text-\[var\(--bg-box-light\)\] {
   color: var(--bg-box-light);
 }
 
 .text-\[var\(--text-dark\)\] {
   color: var(--text-dark);
-}
-
-.text-\[var\(--accent\)\] {
-  color: var(--accent);
-}
-
-.text-\[var\(--bg-box-lighter\)\] {
-  color: var(--bg-box-lighter);
-}
-
-.text-\[var\(--alt-accent\)\] {
-  color: var(--alt-accent);
 }
 
 .opacity-100 {
@@ -1245,7 +1229,7 @@ body {
 }
 
 .problem-to-solution {
-  background: url('/images/problem_solution.png');
+  background: url('images/problem_solution.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
