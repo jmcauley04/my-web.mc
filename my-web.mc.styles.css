@@ -44,6 +44,713 @@ div:has(>.profile-img):hover .profile-img[b-390ft7y6oa] {
         height: 24em;
     }
 }
+/* /Layout/ChristmasFormLayout.razor.rz.scp.css */
+body[b-u5203x338b], html[b-u5203x338b] {
+    height: 100vh;
+    display: flex;
+    overflow: hidden!important;
+}
+
+.sleigh[b-u5203x338b] {
+    font-size: 3rem;
+    color: transparent; /*set color to transparent to re-color emojis*/
+    text-shadow: 0 0 0 #06223f; /*recolor emojis*/
+}
+
+.santa[b-u5203x338b] {
+    animation-name: up-b-u5203x338b, across-b-u5203x338b;
+    animation-duration: 10s, 6.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: 1, 1;
+    animation-delay: 3s, 5s;
+    position: absolute;
+    right: -80px;
+    top: 100px;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+.santa1[b-u5203x338b] {
+    animation-name: up-b-u5203x338b, across-b-u5203x338b;
+    animation-duration: 10s, 6.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: 1, 1;
+    animation-delay: 3.2s, 5.1s;
+    position: absolute;
+    right: -80px;
+    top: 100px;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+.santa2[b-u5203x338b] {
+    animation-name: up-b-u5203x338b, across-b-u5203x338b;
+    animation-duration: 10s, 6.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: 1, 1;
+    animation-delay: 3.4s, 5.2s;
+    position: absolute;
+    right: -80px;
+    top: 100px;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+.santa3[b-u5203x338b] {
+    animation-name: up-b-u5203x338b, across-b-u5203x338b;
+    animation-duration: 10s, 6.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: 1, 1;
+    animation-delay: 3.6s, 5.3s;
+    position: absolute;
+    right: -80px;
+    top: 100px;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+.santa4[b-u5203x338b] {
+    animation-name: up-b-u5203x338b, across-b-u5203x338b;
+    animation-duration: 10s, 6.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: 1, 1;
+    animation-delay: 3.8s, 5.4s;
+    position: absolute;
+    right: -80px;
+    top: 100px;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+.santa5[b-u5203x338b] {
+    animation-name: up-b-u5203x338b, across-b-u5203x338b;
+    animation-duration: 10s, 6.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: 1, 1;
+    animation-delay: 4s, 5.6s;
+    position: absolute;
+    right: -80px;
+    top: 100px;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+.fa-star[b-u5203x338b] {
+    color: #0b364f;
+}
+
+.santa5 svg[b-u5203x338b] {
+    fill: #06223f;
+    transform: scale(-1, 1);
+}
+
+@keyframes up-b-u5203x338b {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes across-b-u5203x338b {
+    from {
+        right: 0%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.fa-snowflake[b-u5203x338b] {
+    color: #ecf2f8;
+}
+
+.snow[b-u5203x338b] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.snowflake[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 10s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 200px;
+    z-index: 7;
+    scale: 1.5;
+    filter: blur(0.5px);
+}
+
+.snowflake1[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 500px;
+    top: -100px;
+    animation-delay: 1s, 1s;
+    z-index: 7;
+    scale: 2;
+    filter: blur(0.5px);
+}
+
+.snowflake2[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 8s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 20px;
+    top: -100px;
+    scale: .8;
+    animation-delay: 2s, 2s;
+    z-index: 7;
+    filter: blur(0.5px);
+}
+
+.snowflake3[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 9s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    right: 170px;
+    top: -100px;
+    animation-delay: 3s, 5s;
+    z-index: 5;
+    filter: blur(0.7px);
+}
+
+.snowflake4[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 15s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    right: 430px;
+    top: -100px;
+    scale: 2.5;
+    animation-delay: 4s, 4s;
+    z-index: 20;
+}
+
+.snowflake5[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 15s, 4s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 500px;
+    top: -100px;
+    animation-delay: 6s, 2s;
+    font-size: 2rem;
+    z-index: 6;
+    scale: 1.2;
+    filter: blur(0.5px);
+}
+
+.snowflake6[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 12s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 75px;
+    top: -100px;
+    animation-delay: 3.2s, 2s;
+    font-size: 2rem;
+    scale: .7;
+    z-index: 6;
+}
+
+.snowflake7[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 11s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 650px;
+    top: -100px;
+    animation-delay: 7.2s, 1s;
+    z-index: 7;
+    scale: 1.7;
+}
+
+.snowflake8[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 12s, 4s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 820px;
+    top: -100px;
+    animation-delay: 4s, 2s;
+    font-size: 2rem;
+    z-index: 5;
+    filter: blur(0.5px);
+}
+
+.snowflake9[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 12s, 4s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 170px;
+    top: -100px;
+    animation-delay: 5s, 2s;
+    font-size: 2rem;
+    z-index: 5;
+    filter: blur(0.3px);
+}
+
+.snowflake10[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 15s, 9s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 350px;
+    top: -100px;
+    animation-delay: 2.7s, 2s;
+    font-size: 3rem;
+    z-index: 20;
+}
+
+.snowflake11[b-u5203x338b] {
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 12s, 7s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    right: 400px;
+    top: -100px;
+    animation-delay: 0.5s, 2s;
+    font-size: 3rem;
+    z-index: 7;
+}
+
+.snowflake12[b-u5203x338b] {
+    /*small*/
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 12s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    left: 470px;
+    top: -100px;
+    animation-delay: 5s, 2s;
+    z-index: 1;
+    filter: blur(0.9px);
+}
+
+.snowflake13[b-u5203x338b] {
+    /*small*/
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 10s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    right: 220px;
+    top: -100px;
+    animation-delay: 1s, 2s;
+    z-index: 1;
+    filter: blur(0.6px);
+}
+
+.snowflake14[b-u5203x338b] {
+    /*small*/
+    animation-name: fall-b-u5203x338b, shake-b-u5203x338b;
+    animation-duration: 9s, 4s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    position: absolute;
+    right: 140px;
+    top: -100px;
+    animation-delay: 2s, 2s;
+    z-index: 1;
+    filter: blur(0.5px);
+}
+
+@keyframes fall-b-u5203x338b {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes shake-b-u5203x338b {
+    0% {
+        transform: translatex(0);
+    }
+
+    50% {
+        transform: translatex(50px);
+    }
+
+    100% {
+        transform: translatex(0);
+    }
+}
+
+.mountains[b-u5203x338b] {
+    width: 100%;
+    position: relative;
+    margin-left: calc(50% - 600px)
+}
+
+.mt1[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: 100px;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    border-bottom: 300px solid #0b364f;
+    z-index: 3;
+}
+/*the bottom border is the only thing we see for the mts, so we give it a color. 300px is the height of the mt. All other borders should be transparent the width of the other borders will determine the angle of the triangle.*/
+
+.mtsnow1[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -50px;
+    bottom: -100px;
+    border-top: 0px solid transparent;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 100px solid #c1cfd7;
+}
+
+.snow-peak-1a[b-u5203x338b] {
+    /*sharp snow edge*/
+    position: absolute;
+    content: "";
+    bottom: -130px;
+    left: -45px;
+    border-top: 30px solid #c1cfd7;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-1b[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -130px;
+    left: -7px;
+    border-top: 30px solid #c1cfd7;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.mt2[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -20px;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    border-bottom: 200px solid #094669;
+    z-index: 6;
+}
+
+.snow2[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -75px;
+    bottom: -98px;
+    border-top: 0px solid transparent;
+    border-right: 75px solid transparent;
+    border-left: 75px solid transparent;
+    border-bottom: 100px solid #e4e8eb;
+}
+
+.snow-peak-2a[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -110px;
+    left: -60px;
+    border-top: 20px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-2b[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -120px;
+    left: -25px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-2c[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -110px;
+    right: -60px;
+    border-top: 20px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.mt3[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: 280px;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    border-bottom: 175px solid #094669;
+    z-index: 6;
+}
+
+.snow3[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -70px;
+    bottom: -80px;
+    border-top: 0px solid transparent;
+    border-right: 70px solid transparent;
+    border-left: 70px solid transparent;
+    border-bottom: 90px solid #e4e8eb;
+}
+
+.snow-peak-3a[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -60px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-3b[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -20px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-3c[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    right: -20px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-3d[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    right: -60px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.mt4[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: 800px;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    border-bottom: 250px solid #0b364f;
+    z-index: 3;
+}
+
+.snow4[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -47px;
+    bottom: -75px;
+    border-top: 0px solid transparent;
+    border-right: 47px solid transparent;
+    border-left: 47px solid transparent;
+    border-bottom: 80px solid #c1cfd7;
+}
+
+.snow-peak-4a[b-u5203x338b] {
+    /*sharp snow edge*/
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -45px;
+    border-top: 30px solid #c1cfd7;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+/* the sharp snow edge an is INVERTED triangle, so we want to see the the top border,not bottom. Top border should have a color. Other borders should be transparent*/
+
+.snow-peak-4b[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -7px;
+    border-top: 30px solid #c1cfd7;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.mt5[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: 500px;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 200px solid transparent;
+    border-left: 200px solid transparent;
+    border-bottom: 150px solid #094669;
+    z-index: 6;
+}
+
+.snow5[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -100px;
+    bottom: -75px;
+    border-top: 0px solid transparent;
+    border-right: 100px solid transparent;
+    border-left: 100px solid transparent;
+    border-bottom: 75px solid #e4e8eb;
+}
+
+.snow-peak-5a[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -95px;
+    left: -60px;
+    border-top: 20px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-5b[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -25px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-5c[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -95px;
+    right: -60px;
+    border-top: 20px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.mt6[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: 950px;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    border-bottom: 175px solid #094669;
+    z-index: 6;
+}
+
+.snow6[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    left: -70px;
+    bottom: -80px;
+    border-top: 0px solid transparent;
+    border-right: 70px solid transparent;
+    border-left: 70px solid transparent;
+    border-bottom: 90px solid #e4e8eb;
+}
+
+.snow-peak-6a[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -60px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-6b[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    left: -20px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-6c[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    right: -20px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.snow-peak-6d[b-u5203x338b] {
+    position: absolute;
+    content: "";
+    bottom: -100px;
+    right: -60px;
+    border-top: 30px solid #e4e8eb;
+    border-right: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 25px solid transparent;
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-4et9nt0az7] {
     position: relative;
@@ -206,3 +913,76 @@ main[b-4et9nt0az7] {
         overflow-y: auto;
     }
 }
+/* /Pages/ChristmasForm/ChristmasForm.razor.rz.scp.css */
+
+
+h1[b-fj1y1i033o] {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 2.5em;
+    font-family: "Mountains of Christmas", serif;
+    line-height: 0;
+    color: #e10000;
+    filter: drop-shadow(2px 4px 6px green);
+}
+
+h2[b-fj1y1i033o] {
+    font-family: "Playwrite AU NSW", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.5em;
+    text-align: right;
+    text-transform: lowercase;
+    margin-bottom: .5em;
+}
+
+h3[b-fj1y1i033o] {
+    font-family: "Playwrite AU NSW", cursive;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+input[b-fj1y1i033o], select[b-fj1y1i033o] {
+    border-bottom: 1px dashed red;
+    padding: .5em;
+}
+
+input:focus[b-fj1y1i033o], select:focus[b-fj1y1i033o]
+{    
+    outline: none;
+}
+
+label[b-fj1y1i033o] {
+    font-size: .8em;
+}
+
+label strong[b-fj1y1i033o] {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-family: "Playwrite AU NSW", cursive;
+}
+
+button[b-fj1y1i033o] {
+    padding: .1em 1em;
+    border-radius: 2em;
+    font-size: 1.5em;
+    background-color: #00badc;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Mountains of Christmas", serif;
+    box-shadow: 1px 2px 3px #00000050;
+}
+
+    button:hover[b-fj1y1i033o] {
+        background-color: #00a9c7;
+    }
+
+    button:active[b-fj1y1i033o] {
+        background-color: #00a0b8;
+        box-shadow: none;
+        transform: translateY(2px);
+    }
