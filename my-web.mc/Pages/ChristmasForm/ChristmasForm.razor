@@ -156,7 +156,7 @@
                 }
                 _models.Add(_model);
                 _model = new();
-                NavigationManager.NavigateTo("/christmas-form/All");
+                NavigationManager.NavigateTo("christmas-form/All");
             }
         }
     }
@@ -191,15 +191,20 @@
 
     protected override void OnParametersSet()
     {
-        if(Name is not null && Name != "All")
+        if(Name is not null && Name.ToUpper() != "ALL")
         {
             _model = _models?.FirstOrDefault(x => x.Name == Name) ?? new FormModel();
+        }
+
+        if (Name?.ToUpper() == "ALL" && Name != "All")
+        {
+            ToAll();
         }
     }
 
     void ToAll()
     {
-        NavigationManager.NavigateTo("/christmas-form/All");
+        NavigationManager.NavigateTo("christmas-form/All");
     }
 
     void NavTo(FormModel? model)
@@ -207,10 +212,10 @@
         if(model is null)
         {
             _model = new FormModel();
-            NavigationManager.NavigateTo("/christmas-form");
+            NavigationManager.NavigateTo("christmas-form");
         } else
         {
-            NavigationManager.NavigateTo($"/christmas-form/{model.Name}");            
+            NavigationManager.NavigateTo($"christmas-form/{model.Name}");            
         }
     }
 }
