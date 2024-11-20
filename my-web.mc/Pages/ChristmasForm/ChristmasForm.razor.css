@@ -1,0 +1,72 @@
+﻿
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 2.5em;
+    font-family: "Mountains of Christmas", serif;
+    line-height: 0;
+    color: #e10000;
+    filter: drop-shadow(2px 4px 6px green);
+}
+
+h2 {
+    font-family: "Playwrite AU NSW", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.5em;
+    text-align: right;
+    text-transform: lowercase;
+    margin-bottom: .5em;
+}
+
+h3 {
+    font-family: "Playwrite AU NSW", cursive;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+input, select {
+    border-bottom: 1px dashed red;
+    padding: .5em;
+}
+
+input:focus, select:focus
+{    
+    outline: none;
+}
+
+label {
+    font-size: .8em;
+}
+
+label strong {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-family: "Playwrite AU NSW", cursive;
+}
+
+button {
+    padding: .1em 1em;
+    border-radius: 2em;
+    font-size: 1.5em;
+    background-color: #00badc;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Mountains of Christmas", serif;
+    box-shadow: 1px 2px 3px #00000050;
+}
+
+    button:hover {
+        background-color: #00a9c7;
+    }
+
+    button:active {
+        background-color: #00a0b8;
+        box-shadow: none;
+        transform: translateY(2px);
+    }

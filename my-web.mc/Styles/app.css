@@ -51,8 +51,9 @@ h1 {
     outline: 0;
 }
 
-html {
+html, body {
     font-size: 12px;
+    overflow-x:hidden;
 }
 
 .svg-fill {
@@ -232,3 +233,36 @@ body {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.hover-highlight .shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(222, 47%, 7%, 0.8);
+    transition: opacity 0.5s;
+    opacity: .4;
+    z-index: 200;
+}
+
+.hover-highlight > div {
+    transition: ease-in-out .2s scale;
+}
+
+.hover-highlight:hover > div {
+    scale: .8;
+}
+
+    .hover-highlight:hover > div .shade {
+        opacity: .8;
+    }
+
+.hover-highlight > div:hover {
+    scale: 1.2;    
+}
+
+.hover-highlight > div:hover .shade {
+    opacity: 0;
+}
+
