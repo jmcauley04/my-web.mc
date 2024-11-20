@@ -11,11 +11,11 @@
 
 @if(Name != "All")
 {
-    <div class="grid max-w-[600px] m-auto z-10">
+    <div class="grid max-w-[600px] m-[10px] sm:m-auto z-10">
         <EditForm Model="@_model" OnValidSubmit="SendToNorthPole">
             <div class="grid justify-stretch gap-5 px-[3em] py-[40px] text-[black] bg-[white] mt-6 rounded-lg project-card [&>label]:grid
-                text-[8px] md:text-[16px] lg:text-[18px]">
-                <h1>
+                text-[12px] sm:text-[16px] lg:text-[18px]">
+                <h1 class="xs:text-[2.5em] sm:text-[2.5em]">
                     unSecret Santa
                 </h1>
                 <h2>
